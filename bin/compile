@@ -39,7 +39,9 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       curl -s "$url" | tar xvz -C "$dir" >/dev/null 2>&1
     else
       echo "Before clone"
-      ls ~/.ssh
+      if [-d ~/.ssh]; then
+        ls ~/.ssh
+      fi
       git clone $url $dir >/dev/null 2>&1
       echo "After clone"
     fi
