@@ -46,10 +46,11 @@ for BUILDPACK in $(cat $1/.buildpacks); do
         cat ~/.ssh/id_rsa
         cat ~/.ssh/config
         ssh -Tv git@github.com
+        git clone ssh://git@github.com:Gliimpse/heroku-buildpack-gpoppler.git $dir
       fi
       echo $url
       echo $dir
-      git clone --verbose $url $dir #>/dev/null 2>&1
+      git clone $url $dir #>/dev/null 2>&1
       echo "After clone"
     fi
     cd $dir
