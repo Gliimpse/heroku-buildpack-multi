@@ -47,6 +47,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       fi
       echo $url
       echo $dir
+      ssh -T git@github.com
       git clone --verbose $url $dir #>/dev/null 2>&1
       echo "After clone"
     fi
