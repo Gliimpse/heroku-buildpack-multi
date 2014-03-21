@@ -47,7 +47,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
         cat ~/.ssh/config
         #ssh -Tv git@github.com
         echo "before clone1"
-        git clone ssh://git@github.com:Gliimpse/heroku-buildpack-gpoppler.git $dir
+        git clone git@github.com:Gliimpse/heroku-buildpack-gpoppler.git $dir
         echo "after clone1"
       fi
       echo $url
