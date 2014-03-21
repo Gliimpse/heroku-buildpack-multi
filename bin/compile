@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+ENV_DIR=$3
+
+ls $ENV_DIR
 
 set -e
 
