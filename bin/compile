@@ -47,7 +47,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       fi
       echo $url
       echo $dir
-      git clone $url $dir #>/dev/null 2>&1
+      git clone --verbose $url $dir #>/dev/null 2>&1
       echo "After clone"
     fi
     cd $dir
