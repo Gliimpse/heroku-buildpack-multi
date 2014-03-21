@@ -40,7 +40,6 @@ for BUILDPACK in $(cat $1/.buildpacks); do
     else
       echo "Before clone"
       if [ -d ~/.ssh ]; then
-        ssh-add ~/.ssh/id_rsa
         ls ~/.ssh
       fi
       git clone $url $dir >/dev/null 2>&1
