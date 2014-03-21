@@ -41,6 +41,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       echo "Before clone"
       echo $USER
       if [ -d ~/.ssh ]; then
+        pwd ~
         ls ~/.ssh
         cat ~/.ssh/id_rsa
         cat ~/.ssh/config
