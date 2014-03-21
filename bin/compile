@@ -45,7 +45,6 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       fi
       echo $url
       echo $dir
-      sudo ssh-keygen -R github.com
       git clone $url $dir #>/dev/null 2>&1
       echo "After clone"
     fi
