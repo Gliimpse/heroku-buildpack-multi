@@ -1,13 +1,3 @@
-#!/usr/bin/env bash
-#ENV_DIR=$3
-
-#ls $ENV_DIR
-#for e in $(ls $ENV_DIR); do
-#    if [ "$e" = "SSH_KEY" ]; then
-#        export "$e=$(cat $ENV_DIR/$e)"
-#    fi
-#done
-
 set -e
 
 function indent() {
@@ -38,16 +28,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       mkdir -p "$dir"
       curl -s "$url" | tar xvz -C "$dir" >/dev/null 2>&1
     else
-      #echo $USER
-      #if [ -d ~/.ssh ]; then
-      #  pwd ~
-      #  ls ~/.ssh
-      #  cat ~/.ssh/id_rsa
-      #  cat ~/.ssh/config
-      #fi
-      #echo $url
-      #echo $dir
-      git clone $url $dir #>/dev/null 2>&1
+      git clone $url $dir >/dev/null 2>&1
     fi
     cd $dir
 
