@@ -43,7 +43,9 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       if [ -d ~/.ssh ]; then
         ls ~/.ssh
       fi
-      git clone $url $dir >/dev/null 2>&1
+      echo $url
+      echo $dir
+      git clone $url $dir #>/dev/null 2>&1
       echo "After clone"
     fi
     cd $dir
