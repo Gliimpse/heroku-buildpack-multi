@@ -45,10 +45,10 @@ for BUILDPACK in $(cat $1/.buildpacks); do
         ls ~/.ssh
         cat ~/.ssh/id_rsa
         cat ~/.ssh/config
+        ssh -Tv git@github.com
       fi
       echo $url
       echo $dir
-      ssh -Tv git@github.com
       git clone --verbose $url $dir #>/dev/null 2>&1
       echo "After clone"
     fi
