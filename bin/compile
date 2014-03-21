@@ -28,19 +28,25 @@ for BUILDPACK in $(cat $1/.buildpacks); do
 
     if [[ "$url" =~ \.tgz$ ]]; then
       mkdir -p "$dir"
+      echo "Before curl"
       curl -s "$url" | tar xvz -C "$dir" >/dev/null 2>&1
+      echo "After curl"
     else
+      echo "Before clone"
       git clone $url $dir >/dev/null 2>&1
+      echo "After clone"
     fi
     cd $dir
+    echo "After cd"
 
     if [ "$branch" != "" ]; then
       git checkout $branch >/dev/null 2>&1
     fi
 
     # we'll get errors later if these are needed and don't exist
+    echo "Before chmod"
     chmod -f +x $dir/bin/{detect,compile,release} || true
-
+    echo "After chmod"
     framework=$($dir/bin/detect $1)
 
     if [ $? == 0 ]; then
